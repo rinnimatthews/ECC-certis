@@ -7,19 +7,21 @@ echo "Transforming Desktop Background"
 #cd /tmp/ECC-certis/Images
 cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
+#rm -f /tmp/ECC-certis
+
 }
 
 # Remove default Icons from the Panel
-remove_default_icons() {
+#remove_default_icons() {
 
 
-}
+#}
 
 # Create Custom Icons and add Icons to the desktop Panel
-add_ECC_icons() {
+#add_ECC_icons() {
 
 
-}
+#}
 
 
 # Main
