@@ -3,10 +3,10 @@
 install_desktop_background() {
 echo "Transforming Desktop Background"
 	CDIR=$(pwd)
-	sudo cd /tmp/
+	cd /tmp/
 	#apt-get install git
 	git clone --recursive https://github.com/rinnimatthews/ECC-certis /tmp/ECC-certis >> $HOME/ECC-install.log 2>&1
-sudo cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
+cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
 #rm -f /tmp/ECC-certis
 
@@ -16,9 +16,9 @@ sudo cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 creating_custom_desktop_icons() {
 	echo "Creating Custom desktop Icons"
 	CDIR=$(pwd)
-	sudo cd /tmp/ECC-certis
+	cd /tmp/ECC-certis
 	sudo mkdir ECC-iconfiles
-	sudo cd ECC-iconfiles
+	cd ECC-iconfiles
 	echo "Creating CEH Icon"
 	sudo echo "[Desktop Entry]" >> CEH.desktop
 	sudo echo "Version=10.0" >> CEH.desktop
@@ -29,9 +29,9 @@ creating_custom_desktop_icons() {
 	sudo echo "Terminal=true" >> CEH.desktop
 	sudo echo "Type=Application" >> CEH.desktop
 	sudo echo "Categories=Application" >> CEH.desktop
-	sudo chmod +x CEH.desktop
-	sudo cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
-	sudo cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
+	sudo -i chmod +x CEH.desktop
+	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
+	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
 	sudo updatedb
 	echo "CEH Icon created"
 }
