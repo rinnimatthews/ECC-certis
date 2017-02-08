@@ -24,13 +24,14 @@ creating_custom_desktop_icons() {
 	echo "Version=10.0" >> CEH.desktop
 	echo "Name=CEH" >> CEH.desktop
 	echo "Comment=Certified Ethical Hacker" >> CEH.desktop
-	echo "Exec=/tmp/ECC-certis/link_files/CEH.sh" >> CEH.desktop
+	echo "Exec=./tmp/ECC-certis/link_files/CEH.sh" >> CEH.desktop
 	echo "Icon=/tmp/ECC-certis/Images/CEH.png" >> CEH.desktop
 	echo "Terminal=true" >> CEH.desktop
 	echo "Type=Application" >> CEH.desktop
 	echo "Categories=Application;" >> CEH.desktop
-	chmod +x CEH.desktop
-	cp -R /tmp/ECC-certis/ECC-iconfiles/CEH.desktop /usr/local/bin/
+	sudo chmod +x CEH.desktop
+	cp -R /tmp/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications
+cp -R /tmp/ECC-certis/ECC-iconfiles/CEH.desktop /home/Desktop
 	sudo updatedb
 	echo "CEH Icon created"
 }
