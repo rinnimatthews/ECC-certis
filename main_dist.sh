@@ -30,6 +30,7 @@ creating_custom_desktop_icons() {
 	echo "Type=Application" >> CEH.desktop
 	echo "Categories=Utility;Application;" >> CEH.desktop
 	chmod +x CEH.desktop
+	cp -R /tmp/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/
 	echo "CEH Icon created"
 }
 
@@ -50,5 +51,5 @@ echo "Welcome to EC-Council OS Suite"
 install_desktop_background
 creating_custom_desktop_icons
 customize_default_icons
-reboot
+#reboot
 
