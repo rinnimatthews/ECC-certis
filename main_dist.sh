@@ -36,10 +36,10 @@ echo "Creating Custom desktop Icons"
 
 # Remove default Icons from the Panel and setting custom icons in panel
 customize_default_icons() {
-gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop']"}
+gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop']"
+}
 
 #rm -f /tmp/ECC-certis
-}
 
 # Login as root
 #login_root(){
@@ -51,5 +51,5 @@ echo "Welcome to EC-Council OS Suite"
 install_desktop_background
 #creating_custom_desktop_icons
 customize_default_icons
-#reboot
+reboot
 
