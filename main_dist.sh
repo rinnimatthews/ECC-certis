@@ -30,7 +30,7 @@ creating_custom_desktop_icons() {
 	echo "Type=Application" >> CEH.desktop
 	echo "Categories=Application;" >> CEH.desktop
 	sudo chmod +x CEH.desktop
-	sudo chmod -R 755 CEH.desktop
+	sudo chmod 777 CEH.desktop
 	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
 	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
 	sudo updatedb
