@@ -5,6 +5,7 @@ echo "Transforming Desktop Background"
 	CDIR=$(pwd)
 	cd /tmp/
 	apt-get install git
+	apt-get install vim
 	git clone --recursive https://github.com/rinnimatthews/ECC-certis /tmp/ECC-certis >> $HOME/ECC-install.log 2>&1
 cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
@@ -35,7 +36,7 @@ echo "Creating Custom desktop Icons"
 
 # Remove default Icons from the Panel and setting custom icons in panel
 customize_default_icons() {
-gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop', 'application://gnome-terminal.desktop','application://CEH.desktop']"}
+gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop']"}
 
 rm -f /tmp/ECC-certis
 }
@@ -45,7 +46,7 @@ rm -f /tmp/ECC-certis
 
 echo "Welcome to EC-Council OS Suite"
 install_desktop_background
-creating_custom_desktop_icons
+#creating_custom_desktop_icons
 customize_default_icons
 reboot
 
