@@ -18,7 +18,7 @@ creating_custom_desktop_icons() {
 	CDIR=$(pwd)
 	cd /tmp/ECC-certis
 	sudo -i mkdir ECC-iconfiles
-	cd ECC-iconfiles
+	sudo -i cd ECC-iconfiles
 	echo "Creating CEH Icon"
 	sudo -i echo "[Desktop Entry]" >> CEH.desktop
 	sudo -i echo "Version=10.0" >> CEH.desktop
