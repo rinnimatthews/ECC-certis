@@ -16,7 +16,7 @@ sudo -i cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgroun
 creating_custom_desktop_icons() {
 	echo "Creating Custom desktop Icons"
 	CDIR=$(pwd)
-	cd /tmp/ECC-certis
+	sudo -i cd /tmp/ECC-certis
 	sudo -i mkdir ECC-iconfiles
 	sudo -i cd ECC-iconfiles
 	echo "Creating CEH Icon"
