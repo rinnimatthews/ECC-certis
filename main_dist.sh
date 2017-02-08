@@ -5,8 +5,8 @@ echo "Transforming Desktop Background"
 	CDIR=$(pwd)
 	cd /tmp/
 	#apt-get install git
-	git clone --recursive https://github.com/rinnimatthews/ECC-certis /tmp/ECC-certis >> $HOME/ECC-install.log 2>&1
-cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
+	git clone --recursive https://github.com/rinnimatthews/ECC-certis /home/eccounciltest/Documents/ECC-certis >> $HOME/ECC-install.log 2>&1
+cp -R /home/eccounciltest/Documents/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
 #rm -f /tmp/ECC-certis
 
@@ -16,7 +16,7 @@ cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 creating_custom_desktop_icons() {
 	echo "Creating Custom desktop Icons"
 	CDIR=$(pwd)
-	cd /tmp/ECC-certis
+	cd /home/eccounciltest/Documents/ECC-certis
 	mkdir ECC-iconfiles
 	cd ECC-iconfiles
 	echo "Creating CEH Icon"
@@ -24,14 +24,14 @@ creating_custom_desktop_icons() {
 	echo "Version=10.0" >> CEH.desktop
 	echo "Name=CEH" >> CEH.desktop
 	echo "Comment=Certified Ethical Hacker" >> CEH.desktop
-	echo "Exec=./tmp/ECC-certis/link_files/CEH.sh" >> CEH.desktop
-	echo "Icon=/tmp/ECC-certis/Images/CEH.png" >> CEH.desktop
+	echo "Exec=/home/eccounciltest/Documents/ECC-certis/link_files/CEH.sh" >> CEH.desktop
+	echo "Icon=/home/eccounciltest/Documents/ECC-certis/Images/CEH.png" >> CEH.desktop
 	echo "Terminal=true" >> CEH.desktop
 	echo "Type=Application" >> CEH.desktop
 	echo "Categories=Application;" >> CEH.desktop
 	sudo chmod +x CEH.desktop
-	cp -R /tmp/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
-	cp -R /tmp/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
+	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
+	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
 	sudo updatedb
 	echo "CEH Icon created"
 }
