@@ -4,6 +4,7 @@ install_desktop_background() {
 echo "Transforming Desktop Background"
 	CDIR=$(pwd)
 	cd /tmp/
+	apt-get install git
 	git clone --recursive https://github.com/rinnimatthews/ECC-certis /tmp/ECC-certis >> $HOME/ECC-install.log 2>&1
 cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
