@@ -5,8 +5,8 @@ echo "Transforming Desktop Background"
 	CDIR=$(pwd)
 	cd /tmp/
 	#apt-get install git
-	git clone --recursive https://github.com/rinnimatthews/ECC-certis /home/eccounciltest/Documents/ECC-certis >> $HOME/ECC-install.log 2>&1
-cp -R /home/eccounciltest/Documents/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
+	git clone --recursive https://github.com/rinnimatthews/ECC-certis /tmp/ECC-certis >> $HOME/ECC-install.log 2>&1
+sudo -i cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
 #rm -f /tmp/ECC-certis
 
@@ -16,23 +16,22 @@ cp -R /home/eccounciltest/Documents/ECC-certis/Images/warty-final-ubuntu.png /us
 creating_custom_desktop_icons() {
 	echo "Creating Custom desktop Icons"
 	CDIR=$(pwd)
-	cd /home/eccounciltest/Documents/ECC-certis
-	mkdir ECC-iconfiles
+	cd /tmp/ECC-certis
+	sudo -i mkdir ECC-iconfiles
 	cd ECC-iconfiles
 	echo "Creating CEH Icon"
-	echo "[Desktop Entry]" >> CEH.desktop
-	echo "Version=10.0" >> CEH.desktop
-	echo "Name=CEH" >> CEH.desktop
-	echo "Comment=Certified Ethical Hacker" >> CEH.desktop
-	echo "Exec=/home/eccounciltest/Documents/ECC-certis/link_files/CEH.sh" >> CEH.desktop
-	echo "Icon=/home/eccounciltest/Documents/ECC-certis/Images/CEH.png" >> CEH.desktop
-	echo "Terminal=true" >> CEH.desktop
-	echo "Type=Application" >> CEH.desktop
-	echo "Categories=Application;" >> CEH.desktop
-	sudo chmod +x CEH.desktop
-	sudo chmod 777 CEH.desktop
-	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
-	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
+	sudo -i echo "[Desktop Entry]" >> CEH.desktop
+	sudo -i echo "Version=10.0" >> CEH.desktop
+	sudo -i echo "Name=CEH" >> CEH.desktop
+	sudo -i echo "Comment=Certified Ethical Hacker" >> CEH.desktop
+	sudo -i echo "Exec=/tmp/ECC-certis/link_files/CEH.sh" >> CEH.desktop
+	sudo -i echo "Icon=/tmp/ECC-certis/Images/CEH.png" >> CEH.desktop
+	sudo -i echo "Terminal=true" >> CEH.desktop
+	sudo -i echo "Type=Application" >> CEH.desktop
+	sudo -i echo "Categories=Application" >> CEH.desktop
+	sudo -i chmod +x CEH.desktop
+	sudo -i cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
+	sudo -i cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
 	sudo updatedb
 	echo "CEH Icon created"
 }
@@ -54,5 +53,5 @@ echo "Welcome to EC-Council OS Suite"
 install_desktop_background
 creating_custom_desktop_icons
 customize_default_icons
-reboot
+#reboot
 
