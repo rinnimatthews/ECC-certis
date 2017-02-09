@@ -1,7 +1,10 @@
 # Login as root
 login_root(){
-#sudo passwd
-#eccouncil
+sudo passwd
+eccouncil
+eccouncil
 #echo "eccouncil" | sudo -S
 sudo echo "greeter-show-manual-login=true" >> /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
 }
+
+login_root
