@@ -7,6 +7,8 @@ echo "Transforming Desktop Background"
 	#apt-get install git
 	git clone --recursive https://github.com/rinnimatthews/ECC-certis /tmp/ECC-certis >> $HOME/ECC-install.log 2>&1
 sudo chmod 777 /tmp/ECC-certis/
+sudo chmod 777 /tmp/ECC-certis/Images
+sudo chmod 777 /tmp/ECC-certis/link_files
 cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
 #rm -f /tmp/ECC-certis
@@ -34,7 +36,9 @@ creating_custom_desktop_icons() {
 	sudo chmod +x CEH.desktop
 	sudo chmod 777 /tmp/ECC-certis/ECC-iconfiles/CEH.desktop
 	cp -R /tmp/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
+	sudo chmod 777 /usr/share/applications/CEH.desktop
 	cp -R /tmp/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
+	sudo chmod 777 /home/eccounciltest/Desktop/CEH.desktop
 	#sudo updatedb
 	echo "CEH Icon created"
 }
