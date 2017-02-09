@@ -20,19 +20,19 @@ creating_custom_desktop_icons() {
 	sudo mkdir ECC-iconfiles
 	cd ECC-iconfiles
 	echo "Creating CEH Icon"
-	sudo echo "[Desktop Entry]" >> CEH.desktop
-	sudo echo "Version=10.0" >> CEH.desktop
-	sudo echo "Name=CEH" >> CEH.desktop
-	sudo echo "Comment=Certified Ethical Hacker" >> CEH.desktop
-	sudo echo "Exec=/tmp/ECC-certis/link_files/CEH.sh" >> CEH.desktop
-	sudo echo "Icon=/tmp/ECC-certis/Images/CEH.png" >> CEH.desktop
-	sudo echo "Terminal=true" >> CEH.desktop
-	sudo echo "Type=Application" >> CEH.desktop
-	sudo echo "Categories=Application" >> CEH.desktop
-	sudo -i chmod +x CEH.desktop
+	echo "[Desktop Entry]" >> CEH.desktop
+	echo "Version=10.0" >> CEH.desktop
+	echo "Name=CEH" >> CEH.desktop
+	echo "Comment=Certified Ethical Hacker" >> CEH.desktop
+	echo "Exec=/tmp/ECC-certis/link_files/CEH.sh" >> CEH.desktop
+	echo "Icon=/tmp/ECC-certis/Images/CEH.png" >> CEH.desktop
+	echo "Terminal=true" >> CEH.desktop
+	echo "Type=Application" >> CEH.desktop
+	echo "Categories=Application" >> CEH.desktop
+	sudo chmod +x CEH.desktop
 	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
 	cp -R /home/eccounciltest/Documents/ECC-certis/ECC-iconfiles/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
-	sudo updatedb
+	#sudo updatedb
 	echo "CEH Icon created"
 }
 
