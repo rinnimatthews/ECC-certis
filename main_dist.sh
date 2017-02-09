@@ -9,6 +9,9 @@ echo "Transforming Desktop Background"
 sudo chmod 777 /tmp/ECC-certis/
 sudo chmod 777 /tmp/ECC-certis/Images
 sudo chmod 777 /tmp/ECC-certis/link_files
+sudo chmod 777 /tmp/ECC-certis/link_files/CEH.sh
+sudo chmod 777 /tmp/ECC-certis/link_files/CND.sh
+sudo chmod 777 /tmp/ECC-certis/link_files/CHFI.sh
 cp -R /tmp/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
 #rm -f /tmp/ECC-certis
