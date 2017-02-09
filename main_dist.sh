@@ -18,15 +18,8 @@ cp -R /home/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
 }
 
-# Creating custom desktop icons
-creating_custom_desktop_icons() {
-	echo "Creating Custom desktop Icons"
-	CDIR=$(pwd)
-	cd /home/ECC-certis
-	sudo mkdir -p /home/ECC-certis/ECC-iconfiles
-	sudo chmod 777 /home/ECC-certis/ECC-iconfiles
-	cd ECC-iconfiles
-	echo "Creating CEH Icon"
+creating_CEH_icon(){
+echo "Creating CEH Icon"
 	echo "[Desktop Entry]" >> CEH.desktop
 	echo "Version=10.0" >> CEH.desktop
 	echo "Name=CEH" >> CEH.desktop
@@ -40,25 +33,52 @@ creating_custom_desktop_icons() {
 	sudo chmod 777 /home/ECC-certis/ECC-iconfiles/CEH.desktop
 	cp -R /home/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
 	sudo chmod 777 /usr/share/applications/CEH.desktop
-	#cp -R /usr/share/applications/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
-	#sudo chmod 777 /home/eccounciltest/Desktop/CEH.desktop
-	#sudo updatedb
-	echo "CEH Icon created"
+echo "CEH Icon created"
+}
+
+creating_CND_icon(){
+echo "Creating CND Icon"
+	echo "[Desktop Entry]" >> CND.desktop
+	echo "Version=10.0" >> CND.desktop
+	echo "Name=CND" >> CND.desktop
+	echo "Comment=Certified Network Defender" >> CND.desktop
+	echo "Exec=/home/ECC-certis/link_files/CND.sh" >> CND.desktop
+	echo "Icon=/home/ECC-certis/Images/CND.png" >> CND.desktop
+	echo "Terminal=true" >> CND.desktop
+	echo "Type=Application" >> CND.desktop
+	echo "Categories=Application" >> CND.desktop
+	sudo chmod +x /home/ECC-certis/ECC-iconfiles/CND.desktop
+	sudo chmod 777 /home/ECC-certis/ECC-iconfiles/CND.desktop
+	cp -R /home/ECC-certis/ECC-iconfiles/CND.desktop /usr/share/applications/CND.desktop
+	sudo chmod 777 /usr/share/applications/CND.desktop
+echo "CND Icon created"
+}
+
+# Creating custom desktop icons
+creating_custom_desktop_icons() {
+	echo "Creating Custom desktop Icons"
+	CDIR=$(pwd)
+	cd /home/ECC-certis
+	sudo mkdir -p /home/ECC-certis/ECC-iconfiles
+	sudo chmod 777 /home/ECC-certis/ECC-iconfiles
+	cd ECC-iconfiles
+	creating_CEH_icon
+	creating_CND_icon
 }
 
 # Remove default Icons from the Panel and setting custom icons in panel
 customize_default_icons() {
 echo "Replacing default panel icons"
-sudo gsettings set com.canonical.Unity.Launcher favorites "['application://CEH.desktop', 'application://gnome-terminal.desktop', 'nautilus-home.desktop','application://firefox.desktop']"
+sudo gsettings set com.canonical.Unity.Launcher favorites "['application://CEH.desktop','application://CND.desktop', 'application://gnome-terminal.desktop', 'nautilus-home.desktop','application://firefox.desktop']"
 echo "default panel icons replaced"
 }
-
-#rm -f /home/ECC-certis
 
 # Login as root
 #login_root(){
 
 #}
+
+
 # Main
 
 echo "Welcome to EC-Council OS Suite"
