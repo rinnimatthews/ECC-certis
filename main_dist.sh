@@ -54,6 +54,26 @@ echo "Creating CND Icon"
 echo "CND Icon created"
 }
 
+creating_CHFI_icon(){
+echo "Creating CHFI Icon"
+	echo "[Desktop Entry]" >> CHFI.desktop
+	echo "Version=10.0" >> CHFI.desktop
+	echo "Name=CHFI" >> CHFI.desktop
+	echo "Comment=Certified Hacking Forensics Investigator" >> CHFI.desktop
+	echo "Exec=/home/ECC-certis/link_files/CHFI.sh" >> CHFI.desktop
+	echo "Icon=/home/ECC-certis/Images/CHFI.png" >> CHFI.desktop
+	echo "Terminal=true" >> CHFI.desktop
+	echo "Type=Application" >> CHFI.desktop
+	echo "Categories=Application" >> CHFI.desktop
+	sudo chmod +x /home/ECC-certis/ECC-iconfiles/CHFI.desktop
+	sudo chmod 777 /home/ECC-certis/ECC-iconfiles/CHFI.desktop
+	cp -R /home/ECC-certis/ECC-iconfiles/CHFI.desktop /usr/share/applications/CHFI.desktop
+	sudo chmod 777 /usr/share/applications/CHFI.desktop
+echo "CHFI Icon created"
+}
+
+
+
 # Creating custom desktop icons
 creating_custom_desktop_icons() {
 	echo "Creating Custom desktop Icons"
@@ -64,12 +84,13 @@ creating_custom_desktop_icons() {
 	cd ECC-iconfiles
 	creating_CEH_icon
 	creating_CND_icon
+	creating_CHFI_icon
 }
 
 # Remove default Icons from the Panel and setting custom icons in panel
 customize_default_icons() {
 echo "Replacing default panel icons"
-sudo gsettings set com.canonical.Unity.Launcher favorites "['application://CEH.desktop','application://CND.desktop', 'application://gnome-terminal.desktop', 'nautilus-home.desktop','application://firefox.desktop']"
+sudo gsettings set com.canonical.Unity.Launcher favorites "['application://CEH.desktop','application://CND.desktop', 'application://CHFI.desktop', 'application://firefox.desktop', 'application://gnome-terminal.desktop', 'nautilus-home.desktop]"
 echo "default panel icons replaced"
 }
 
