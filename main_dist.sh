@@ -90,7 +90,7 @@ creating_custom_desktop_icons() {
 # Remove default Icons from the Panel and setting custom icons in panel
 customize_default_icons() {
 echo "Replacing default panel icons"
-sudo gsettings set com.canonical.Unity.Launcher favorites "['application://CEH.desktop','application://CND.desktop', 'application://CHFI.desktop', 'application://firefox.desktop', 'application://gnome-terminal.desktop', 'nautilus-home.desktop]"
+sudo gsettings set com.canonical.Unity.Launcher favorites "['application://CEH.desktop','application://CND.desktop','application://CHFI.desktop','application://firefox.desktop','application://gnome-terminal.desktop','nautilus-home.desktop']"
 echo "default panel icons replaced"
 }
 
