@@ -48,7 +48,9 @@ creating_custom_desktop_icons() {
 
 # Remove default Icons from the Panel and setting custom icons in panel
 customize_default_icons() {
-gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop', 'application://gnome-terminal.desktop', 'application://CEH.desktop']"
+echo "Replacing default panel icons"
+gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop', 'application://gnome-terminal.desktop']"
+echo "default panel icons replaced"
 }
 
 #rm -f /home/ECC-certis
