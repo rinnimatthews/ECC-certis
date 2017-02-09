@@ -3,7 +3,7 @@
 install_desktop_background() {
 echo "Transforming Desktop Background"
 	CDIR=$(pwd)
-	cd /tmp/
+	cd /home/
 	#apt-get install git
 	git clone --recursive https://github.com/rinnimatthews/ECC-certis /home/ECC-certis >> $HOME/ECC-install.log 2>&1
 sudo chmod 777 /home/ECC-certis/
@@ -11,10 +11,10 @@ sudo chmod 777 /home/ECC-certis/Images
 sudo chmod 777 /home/ECC-certis/link_files
 sudo chmod 777 /home/ECC-certis/link_files/CEH.sh
 sudo chmod 777 /home/ECC-certis/link_files/CND.sh
-sudo chmod 777 /tmp/ECC-certis/link_files/CHFI.sh
+sudo chmod 777 /home/ECC-certis/link_files/CHFI.sh
 cp -R /home/ECC-certis/Images/warty-final-ubuntu.png /usr/share/backgrounds/
 
-#rm -f /tmp/ECC-certis
+#rm -f /home/ECC-certis
 
 }
 
@@ -51,7 +51,7 @@ customize_default_icons() {
 gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop', 'application://gnome-terminal.desktop', 'application://CEH.desktop']"
 }
 
-#rm -f /tmp/ECC-certis
+#rm -f /home/ECC-certis
 
 # Login as root
 #login_root(){
