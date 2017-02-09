@@ -40,8 +40,8 @@ creating_custom_desktop_icons() {
 	sudo chmod 777 /home/ECC-certis/ECC-iconfiles/CEH.desktop
 	cp -R /home/ECC-certis/ECC-iconfiles/CEH.desktop /usr/share/applications/CEH.desktop
 	sudo chmod 777 /usr/share/applications/CEH.desktop
-	cp -R /usr/share/applications/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
-	sudo chmod 777 /home/eccounciltest/Desktop/CEH.desktop
+	#cp -R /usr/share/applications/CEH.desktop /home/eccounciltest/Desktop/CEH.desktop
+	#sudo chmod 777 /home/eccounciltest/Desktop/CEH.desktop
 	#sudo updatedb
 	echo "CEH Icon created"
 }
@@ -49,7 +49,7 @@ creating_custom_desktop_icons() {
 # Remove default Icons from the Panel and setting custom icons in panel
 customize_default_icons() {
 echo "Replacing default panel icons"
-gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop', 'application://gnome-terminal.desktop']"
+sudo gsettings set com.canonical.Unity.Launcher favorites "['nautilus-home.desktop','application://firefox.desktop', 'application://gnome-terminal.desktop', 'application://CEH.desktop']"
 echo "default panel icons replaced"
 }
 
@@ -65,5 +65,5 @@ echo "Welcome to EC-Council OS Suite"
 install_desktop_background
 creating_custom_desktop_icons
 customize_default_icons
-#reboot
+reboot
 
