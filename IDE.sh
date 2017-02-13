@@ -3,6 +3,7 @@ __apt_get_install_noinput() {
 }
 
 __apt_get_remove_noinput() {
+#    apt-get remove -y -o DPkg::Options::=--force-confold $@; return $?
     apt-get remove -y -o DPkg::Options::=--force-confold $@; return $?
 }
 
@@ -14,9 +15,9 @@ lightdm"
        __apt_get_remove_noinput $PACKAGE >> $HOME/ECC-install.log #2>&1
        ERROR=$?
        if [ $ERROR -ne 0 ]; then
-           echo "Install Failure: $PACKAGE (Error Code: $ERROR)"
+           echo "Remove Failure: $PACKAGE (Error Code: $ERROR)"
        else
-           echo "Installed Package: $PACKAGE"
+           echo "Removed Package: $PACKAGE"
        fi
    done
 echo "Unity packages Removed"
