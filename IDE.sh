@@ -24,8 +24,8 @@ echo "Unity packages Removed"
 }
 
 install_gnome(){
-packages="gdm
-gnome-shell
+packages="gdm --no-install-recommends
+gnome-shell --no-install-recommends
 ubuntu-gnome-desktop"
    echo "Installing Gnome packages"
    for PACKAGE in $packages; do
@@ -45,9 +45,12 @@ ubuntu-gnome-desktop"
 #install_gnome(){
 #sudo apt-get remove lightdm -y && sudo apt-get install gdm -y
 #sudo service gdm start
-#sudo apt-get install gnome-shell -y
+#sudo apt-get install gnome-shell -y --no-install-recommends
 #sudo apt-get install ubuntu-gnome-desktop -y
 #sudo apt-get remove unity -y
+
+
+#sudo apt-get install gdm --no-install-recommends
 #}
 
 remove_unity
