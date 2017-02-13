@@ -24,8 +24,8 @@ echo "Unity packages Removed"
 }
 
 install_gnome(){
-packages="gdm --no-install-recommends
-gnome-shell --no-install-recommends
+packages="gdm
+gnome-shell
 ubuntu-gnome-desktop"
    echo "Installing Gnome packages"
    for PACKAGE in $packages; do
@@ -55,4 +55,5 @@ ubuntu-gnome-desktop"
 
 remove_unity
 install_gnome
+reboot
 
