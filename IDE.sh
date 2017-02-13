@@ -3,7 +3,7 @@ __apt_get_install_noinput() {
 }
 
 __apt_get_remove_noinput() {
-    apt-get install -y -o DPkg::Options::=--force-confold $@; return $?
+    apt-get remove -y -o DPkg::Options::=--force-confold $@; return $?
 }
 
 remove_unity(){
