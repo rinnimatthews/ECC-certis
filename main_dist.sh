@@ -4,7 +4,7 @@ install_desktop_background() {
 echo "Transforming Desktop Background"
 	CDIR=$(pwd)
 	cd /home/
-	apt-get install git
+	#apt-get install git
 	git clone --recursive https://github.com/rinnimatthews/ECC-certis /home/ECC-certis >> $HOME/ECC-install.log 2>&1
 sudo chmod 777 /home/ECC-certis/
 sudo chmod 777 /home/ECC-certis/Images
