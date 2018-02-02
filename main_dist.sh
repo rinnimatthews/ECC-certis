@@ -99,7 +99,7 @@ echo "default panel icons replaced"
 #sudo passwd
 #eccouncil
 #echo "greeter-show-manual-login=true" >> /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
-}
+#}
 
 
 # Main
