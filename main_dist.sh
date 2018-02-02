@@ -95,11 +95,11 @@ echo "default panel icons replaced"
 }
 
 # Login as root
-#login_root(){
-#sudo passwd
-#eccouncil
-#echo "greeter-show-manual-login=true" >> /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
-#}
+login_root(){
+sudo passwd
+eccouncil
+echo "greeter-show-manual-login=true" >> /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
+}
 
 
 # Main
@@ -108,6 +108,6 @@ echo "Welcome to EC-Council OS Suite"
 install_desktop_background
 creating_custom_desktop_icons
 customize_default_icons
-#login_root
+login_root
 reboot
 
