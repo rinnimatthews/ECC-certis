@@ -108,7 +108,7 @@ echo "Welcome to EC-Council OS Suite"
 install_desktop_background
 creating_custom_desktop_icons
 customize_default_icons
-login_root
-rm -f /home/ECC-certis
+#login_root
+#rm -f /home/ECC-certis
 reboot
 
